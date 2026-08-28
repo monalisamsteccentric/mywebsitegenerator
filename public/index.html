@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a complete website with AI in seconds.">
+  <title>AI Website Builder</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="AI Website Builder home">
+      <span class="brand-mark">A</span>
+      <span>AI Website Builder</span>
+    </a>
+    <span class="status-pill"><span class="status-dot"></span> Ready to build</span>
+  </header>
+
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="spark">✦</span> Your ideas, online</p>
+      <h1 id="page-title">Build a Website<br><em>with AI</em></h1>
+      <p class="subtitle">Describe your website and AI will build it for you.</p>
+    </section>
+
+    <section class="builder-card" aria-label="Website builder">
+      <form id="builder-form">
+        <div class="field-heading">
+          <label for="prompt">What should we build?</label>
+          <span id="character-count">0 / 2,000</span>
+        </div>
+        <textarea id="prompt" name="prompt" maxlength="2000" placeholder="Create a modern website for a Bangalore coffee shop called Brew House. Include a hero section, menu, about section, testimonials and contact section." required></textarea>
+        <div class="form-footer">
+          <p class="hint"><span>⌘</span> Be specific for better results</p>
+          <button class="primary-button" id="generate-button" type="submit">
+            <span>Generate Website</span><span class="button-arrow">&#8594;</span>
+          </button>
+        </div>
+      </form>
+      <div class="error-message" id="error-message" role="alert" aria-live="polite"></div>
+    </section>
+
+    <section class="loading-panel" id="loading-panel" aria-live="polite" hidden>
+      <div class="loader-ring"></div>
+      <div><strong>Building your website...</strong><span>Writing the layout, content, and polish.</span></div>
+    </section>
+
+    <section class="preview-section" id="preview-section" hidden aria-labelledby="preview-title">
+      <div class="preview-heading">
+        <div><p class="eyebrow">Your creation</p><h2 id="preview-title">Website preview</h2></div>
+        <div class="preview-actions">
+          <button class="secondary-button" id="fullscreen-button" type="button"><span aria-hidden="true">&#8599;</span> Open Full Screen</button>
+          <button class="dark-button" id="download-button" type="button"><span aria-hidden="true">&#8595;</span> Download HTML</button>
+        </div>
+      </div>
+      <div class="preview-frame-wrap"><iframe id="website-preview" title="Generated website preview" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Built for ideas that deserve a homepage.</footer>
+  <script src="/script.js"></script>
+</body>
+</html>
